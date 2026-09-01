@@ -14,6 +14,7 @@ services:
     command:
       - --providers.docker=true
       - --providers.docker.exposedbydefault=false
+      - --providers.docker.constraints=Label(`com.docker.compose.project`, `affine`)
       - --entrypoints.web.address=:80
     networks:
       - default
@@ -40,6 +41,7 @@ services:
       - AFFINE_INDEXER_ENABLED=false
     labels:
       - traefik.enable=true
+      - traefik.docker.network=affine_default
       - traefik.http.routers.affine.rule=Host(`workspace.kansos.org`)
       - traefik.http.routers.affine.entrypoints=web
       - traefik.http.services.affine.loadbalancer.server.port=3010
