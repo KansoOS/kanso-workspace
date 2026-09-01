@@ -1,0 +1,13 @@
+{
+  "$schema": "https://github.com/toeverything/affine/releases/latest/download/config.schema.json",
+  "server": {
+    "name": "KansOS Documentation",
+    "externalUrl": "https://workspace.kansos.org"
+  },
+  "copilot": {
+    "enabled": true,
+    "byok": {
+      "enabled": true
+    }
+  }
+}
